@@ -4,7 +4,7 @@ import Footer from '../components/shared/footer/Footer';
 
 const Main = () => {
   return (
-    <div className="h-screen">
+    <div className=" overflow-x-auto">
       <Header />
       <Outlet/>
       <Footer/>
