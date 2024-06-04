@@ -1,17 +1,22 @@
-import  { useState } from "react";
-import {Link} from "react-router-dom"
+import {useContext} from "react"
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import LogoutButton from "./LogoutButton";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 function Header() {
+  const { user } = useContext(AuthContext)
+ 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-gray-900 text-white">
+    <div className="bg-gray-900 text-white">
       <div className="container mx-auto flex justify-between items-center py-4 px-8">
         {/* Logo */}
         <div className="text-xl font-bold">
-          <a href="#" className="hover:text-gray-300">
+          <Link to="/" className="hover:text-gray-300">
             Update Blog
-          </a>
+          </Link>
         </div>
         {/* Navigation Links */}
         <nav className="hidden md:flex space-x-4">
@@ -25,9 +30,18 @@ function Header() {
           <Link to="/contact" className="hover:text-gray-300">
             Contact
           </Link>
-          <Link to="/login" className="hover:text-gray-300">
-            Login
-          </Link>
+
+          {user ? (
+            <>
+              <LogoutButton />
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="hover:text-gray-300">
+                Login
+              </Link>
+            </>
+          )}
         </nav>
         {/* Mobile Menu Button (Hidden on larger screens) */}
         <div className="md:hidden">
@@ -55,8 +69,8 @@ function Header() {
       {/* Mobile Menu (Hidden on larger screens) */}
       <div
         className={`md:hidden ${
-          isMobileMenuOpen ? "block" : "hidden"
-        } bg-gray-800`}
+          isMobileMenuOpen ? "block " : "hidden"
+        } bg-gray-600  pb-4 pl-4 pr-4 text-center`}
       >
         <Link to="/" className="block py-2 px-4 hover:bg-gray-700">
           Home
@@ -64,21 +78,23 @@ function Header() {
         <Link to="/about" className="block py-2 px-4 hover:bg-gray-700">
           About
         </Link>
-        <Link to="/blog" className="block py-2 px-4 hover:bg-gray-700">
-          Blog
-        </Link>
-        <Link
-          to="/contact"
-          href="#"
-          className="block py-2 px-4 hover:bg-gray-700"
-        >
+
+        <Link to="/contact" className="block py-2 px-4 hover:bg-gray-700">
           Contact
         </Link>
-        <Link to="/login" className="block py-2 px-4 hover:text-gray-300">
-          Login
-        </Link>
+        {user ? (
+          <>
+            <LogoutButton />
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="hover:text-gray-300">
+              Login
+            </Link>
+          </>
+        )}
       </div>
-    </header>
+    </div>
   );
 }
 
