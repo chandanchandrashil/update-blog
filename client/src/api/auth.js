@@ -7,16 +7,13 @@ export const saveUserInfo = (user) => {
   };
 
   try {
-    fetch(
-      `https://update-blog-ek8pfkh9r-chandanchandrashils-projects.vercel.app/users/${user?.email}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(currentUserInfo),
-      }
-    )
+    fetch(`https://update-blog-api.vercel.app/users/${user?.email}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(currentUserInfo),
+    })
       .then((res) => res.json())
       .then((data) => console.log(data));
   } catch (err) {
