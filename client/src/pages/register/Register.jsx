@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 import { ImSpinner } from "react-icons/im";
+import { saveUserInfo } from "../../api/auth";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -52,17 +53,18 @@ const Register = () => {
           .then((result) => {
             console.log(result.user);
             updateUserProfile(name, imageUrl)
-              .then(() => {
-                  toast.success("Register Successful!")
+              .then((result) => {
+                toast.success("Register Successful!");
+                // save userInfo mongodb
+                saveUserInfo(result.user);
                 navigate(from, { replace: true });
-                form.reset()
+                form.reset();
               })
               .catch((err) => {
                 setLoading(false);
                 console.log(err.message);
                 toast.error(err.message);
               });
-            
           })
           .catch((err) => {
             setLoading(false);
@@ -82,8 +84,10 @@ const Register = () => {
   const handleGoogleRegister = () => {
     logInWithGoogle()
       .then((result) => {
-        console.log(result.user);
+        console.log("from register page : 87",result.user);
         toast.success("Register successful!");
+        saveUserInfo(result.user)
+        // save user info mongodb
         navigate(from, { replace: true });
       })
       .catch((err) => {
@@ -98,7 +102,7 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         toast.success("Register successful!");
-        navigate(from,{ replace: true });
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         setLoading(false);

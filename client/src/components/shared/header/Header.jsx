@@ -33,6 +33,9 @@ function Header() {
 
           {user ? (
             <>
+              <Link to="/dashboard" className="hover:text-gray-300">
+                Dashboard
+              </Link>
               <LogoutButton />
             </>
           ) : (

@@ -1,24 +1,22 @@
 import React from 'react';
 
-const SingleBlogMenu = () => {
+const SingleBlogMenu = ({blog}) => {
   return (
     <div className="flex items-center gap-4 mb-4 ">
       <div className="flex:1   ">
         <img
           className=" border-2   w-24 relative object-cover  "
-          src="https://images.pexels.com/photos/24816519/pexels-photo-24816519/free-photo-of-sintra-national-palace.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src={blog?.image}
           alt=""
         />
       </div>
       <div className="flex-1">
         <span className="badge bg-green-400 text-white rounded-full px-2 py-1">
-          Food
+          {blog?.category}
         </span>
-        <h2 className="text-gl font-semibold">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        </h2>
+        <h2 className="text-gl font-semibold">{blog?.title}</h2>
         <div>
-          <span>Chan Dan</span> <span>06/06/2024</span>
+          <span>{blog.author_name}</span> <span>{blog.published_date}</span>
         </div>
       </div>
     </div>

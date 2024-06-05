@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 import { ImSpinner } from "react-icons/im";
+import { saveUserInfo } from "../../api/auth";
 
 const Login = () => {
   const emailRef = useRef()
@@ -18,6 +19,8 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         toast.success("Login successful!");
+        // save user info mongodb
+        saveUserInfo(result.user)
         navigate(from, { replace: true });
       })
       .catch((err) => {
