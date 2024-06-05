@@ -1,10 +1,11 @@
-import React from 'react';
+
 
 const DashBoardLayout = () => {
+  
   return (
     <div>
       
-    </div>
+   </div>
   );
 };
 
