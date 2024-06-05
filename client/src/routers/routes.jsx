@@ -1,20 +1,20 @@
-import {createBrowserRouter} from "react-router-dom"
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
-import Home from "../pages/home/Home";
 import ErrorPage from "../pages/ErrorPage";
 import About from "../pages/about/About";
 import Contact from "../pages/contact/Contact";
+import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 
-import BlogCategory from "../pages/BlogCategory/BlogCategory";
 import DashBoardLayout from "../layout/DashBoardLayout";
-import DashBoardHome from "../pages/dashBoard/DashBoardHome";
+import BlogCategory from "../pages/BlogCategory/BlogCategory";
 import AddBlog from "../pages/dashBoard/AddBlog";
-import EditBlog from "../pages/dashBoard/EditBlog";
 import AllBlogs from "../pages/dashBoard/AllBlogs";
-import UserProfile from "../pages/dashBoard/UserProfile";
+import DashBoardHome from "../pages/dashBoard/DashBoardHome";
+import EditBlog from "../pages/dashBoard/EditBlog";
 import ManageBlogs from "../pages/dashBoard/ManageBlogs";
+import UserProfile from "../pages/dashBoard/UserProfile";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/all-blogs"),
+        loader: () => fetch("https://update-blog-api.vercel.app/all-blogs"),
       },
       {
         path: "/contact",
@@ -64,12 +64,12 @@ export const router = createBrowserRouter([
         path: "edit-blog/:id",
         element: <EditBlog />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/all-blogs${params.id}`),
+          fetch(`https://update-blog-api.vercel.app/all-blogs${params.id}`),
       },
       {
         path: "manage-blogs",
         element: <ManageBlogs />,
-        loader: () => fetch("http://localhost:5000/all-blogs"),
+        loader: () => fetch("https://update-blog-api.vercel.app/all-blogs"),
       },
       {
         path: "all-blogs",
