@@ -3,7 +3,7 @@ import SingleBlogCard from "./SingleBlogCard";
 
 const BlogCardList = ({blogs}) => {
   return (
-    <div className="w-2/3   ">
+    <div className="lg:w-2/3 w-full">
       <h1 className="text-4xl sm:font-bold font-bold my-12 mr-auto ml-auto ">
         Recent Posts
       </h1>

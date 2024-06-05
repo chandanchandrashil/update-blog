@@ -17,7 +17,7 @@ const Home = () => {
       <Hero />
       <FeaturedBlog />
       <PopularCategory />
-      <div className=" flex gap-12">
+      <div className=" lg:flex md:flex  lg:gap-12 md:gap-4">
         <BlogCardList blogs={blogs} />
         <BlogMenu blogs={blogs} />
       </div>

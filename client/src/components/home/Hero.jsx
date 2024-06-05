@@ -13,8 +13,8 @@ const Hero = () => {
       {/* Overlay */}
       <div className="hero-content text-center text-neutral-content relative z-10">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Featured Blog Post</h1>
-          <p className="mb-5">
+          <h1 className="mb-5 text-3xl md:text-4xl  lg:text-5xl  font-bold">Featured Blog Post</h1>
+          <p className="mb-5 lg:text-lg font-semibold">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>

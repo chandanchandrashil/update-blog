@@ -2,7 +2,7 @@ import React from 'react';
 import {Link }  from "react-router-dom"
 const SingleBlogCard = ({blog}) => {
   return (
-    <div className="flex gap-8 justify-center mb-12 items-center">
+    <div className="lg:flex gap-8 justify-center mb-12  items-center">
       <div>
         <img
           className="w-96 relative flex-1 object-contain"
@@ -10,8 +10,8 @@ const SingleBlogCard = ({blog}) => {
           alt=""
         />
       </div>
-      <div className="flex-1">
-        <div>
+      <div className="lg:flex-1 ">
+        <div className=" mt-6">
           <span className="inline-block px-2 py-1 mr-2 rounded-lg text-center bg-blue-600 text-white font-medium">
             {blog?.category}
           </span>

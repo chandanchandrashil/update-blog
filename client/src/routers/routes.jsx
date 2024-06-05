@@ -24,7 +24,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("https://update-blog-api.vercel.app/all-blogs"),
+        loader: () =>
+          fetch(
+            "https://update-blog-ek8pfkh9r-chandanchandrashils-projects.vercel.app/all-blogs"
+          ),
       },
       {
         path: "/contact",
@@ -64,12 +67,17 @@ export const router = createBrowserRouter([
         path: "edit-blog/:id",
         element: <EditBlog />,
         loader: ({ params }) =>
-          fetch(`https://update-blog-api.vercel.app/all-blogs${params.id}`),
+          fetch(
+            `https://update-blog-ek8pfkh9r-chandanchandrashils-projects.vercel.app/all-blogs${params.id}`
+          ),
       },
       {
         path: "manage-blogs",
         element: <ManageBlogs />,
-        loader: () => fetch("https://update-blog-api.vercel.app/all-blogs"),
+        loader: () =>
+          fetch(
+            "https://update-blog-ek8pfkh9r-chandanchandrashils-projects.vercel.app/all-blogs"
+          ),
       },
       {
         path: "all-blogs",
