@@ -8,7 +8,7 @@ const BlogCardList = ({blogs}) => {
         Recent Posts
       </h1>
       <div>
-        {blogs.slice(0,10).map((blog) => (
+        {blogs?.map((blog) => (
           <SingleBlogCard key={blog._id} blog={blog} />
         ))}
 

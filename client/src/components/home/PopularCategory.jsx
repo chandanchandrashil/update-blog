@@ -20,7 +20,7 @@ const PopularCategory = () => {
       </div>
       <div>
         <div className=" grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-6 mt-8 sm:gap-4 md:gap-4 lg:gap-6">
-          {categories.map((name, index) => (
+          {categories?.map((name, index) => (
             <PopularCategoryCard
               key={name}
               name={name}

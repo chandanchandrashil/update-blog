@@ -41,7 +41,7 @@ const BlogMenu = ({blogs}) => {
           <h2 className="text-xl font-semibold">Lorem ipsum dolor sit.</h2>
         </div>
         <div>
-          {blogs.slice(0,10).map((blog) => (
+          {blogs?.map((blog) => (
             <BlogMenuPost key={blog._id} blog={blog} />
           ))}
         </div>

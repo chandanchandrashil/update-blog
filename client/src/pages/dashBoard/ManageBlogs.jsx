@@ -10,7 +10,7 @@ const ManageBlogs = () => {
     <div>
       <h1 className="text-4xl text-center font-bold">welcome manage product page</h1>
       <div className="grid gap-4 m-12 ms:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-        {blogs.map((blog) => (
+        {blogs?.map((blog) => (
           <ManageBlogCard blog={blog} key={blog._id} />
         ))}
       </div>
