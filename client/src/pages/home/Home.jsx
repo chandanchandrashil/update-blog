@@ -1,16 +1,22 @@
-import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
-import Hero from "../../components/home/Hero";
-import FeaturedBlog from "../../components/home/FeaturedBlog";
-import PopularCategory from "../../components/home/PopularCategory";
+import { useEffect, useState } from "react";
+
 import BlogCardList from "../../components/home/BlogCardList";
 import BlogMenu from "../../components/home/BlogMenu";
+import FeaturedBlog from "../../components/home/FeaturedBlog";
+import Hero from "../../components/home/Hero";
+import PopularCategory from "../../components/home/PopularCategory";
 
 const Home = () => {
-  const blogsData = useLoaderData();
-  const [blogs, setBlogs] = useState(blogsData);
+  const [blogs, setBlogs] = useState(null);
 
-  console.log(blogs);
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      await fetch("https://update-blog-api.vercel.app/all-blogs")
+        .then((res) => res.json())
+        .then((data) => setBlogs(data));
+    };
+    fetchBlogData();
+  }, []);
 
   return (
     <div>

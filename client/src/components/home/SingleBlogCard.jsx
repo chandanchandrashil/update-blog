@@ -19,7 +19,10 @@ const SingleBlogCard = ({blog}) => {
         </div>
         <h2 className="text-xl mt-2 font-bold mb-4">{blog.title}</h2>
         <p className="text-lg font-">{blog?.content}</p>
-        <Link to="/" className="  font-bold border-b border-blue-700 ">
+        <Link
+          to={`/single-blog/${blog._id}`}
+          className="  font-bold border-b border-blue-700 "
+        >
           Read More ...
         </Link>
       </div>

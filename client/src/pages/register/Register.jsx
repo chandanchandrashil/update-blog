@@ -14,7 +14,7 @@ const Register = () => {
   const {
     createUser,
     loading,
-    logInWithFacebook,
+    
     setLoading,
     logInWithGoogle,
     updateUserProfile,
@@ -98,7 +98,8 @@ const Register = () => {
   };
 
   const handleFacebookRegister = () => {
-    logInWithFacebook()
+    toast.success("This Featured Coming  Soon! Please Register with Google !");
+    /* logInWithFacebook()
       .then((result) => {
         console.log(result.user);
         toast.success("Register successful!");
@@ -108,7 +109,7 @@ const Register = () => {
         setLoading(false);
         console.log(err.message);
         toast.error(err.message);
-      });
+      }); */
   };
 
   return (

@@ -38,7 +38,7 @@ async function run() {
     app.post("/all-blogs", async (req, res) => {
       const blogData = req.body;
       const result = await blogsCollection.insertOne(blogData);
-      console.log(result);
+      
       res.send(result);
     });
 

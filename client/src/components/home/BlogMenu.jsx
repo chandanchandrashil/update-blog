@@ -12,7 +12,6 @@ const BlogMenu = ({blogs}) => {
           <h1 className="  text-4xl sm:font-bold font-bold">Most Popular</h1>
           <h2 className="text-xl font-semibold">Lorem ipsum dolor sit.</h2>
         </div>
-
         <div>
           {blogs?.map((blog) => (
             <SingleBlogMenu key={blog._id} blog={blog} />

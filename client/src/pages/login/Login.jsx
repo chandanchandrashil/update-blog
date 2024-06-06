@@ -10,7 +10,7 @@ const Login = () => {
    const navigate = useNavigate();
    const location = useLocation();
    const from = location.state?.from?.pathname || "/";
-  const { loginUser, logInWithGoogle, loading, setLoading,  logInWithFacebook, resetPassword } =
+  const { loginUser, logInWithGoogle, loading, setLoading, resetPassword } =
     useContext(AuthContext);
   
 
@@ -30,7 +30,8 @@ const Login = () => {
       });
   };
   const handleFacebookLogin = () => {
-    logInWithFacebook()
+    toast.success("This Featured Coming  Soon! Please login with Google!");
+    /* logInWithFacebook()
       .then((result) => {
         console.log(result.user);
         toast.success("Login successful!");
@@ -40,7 +41,7 @@ const Login = () => {
         setLoading(false);
         console.log(err.message);
         toast.error(err.message);
-      });
+      }); */
   };
 
   const handleLogin = (event) => {
