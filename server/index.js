@@ -5,9 +5,12 @@ const cors = require("cors");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
 
-//middleware
-app.use(cors());
-app.use(express.json());
+// middleware
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+  optionSuccessStatus: 200,
+}
 
 const uri = `mongodb+srv://${process.env.BD_NAME}:${process.env.BD_PASSWORD}@cluster0.bwgvxez.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
@@ -29,8 +32,9 @@ async function run() {
 
     app.get("/all-blogs", async (req, res) => {
       const blogsData = await blogsCollection.find();
+     
       const result = await blogsData.toArray();
-      console.log(result);
+
       res.send(result);
     });
 
@@ -38,7 +42,7 @@ async function run() {
     app.post("/all-blogs", async (req, res) => {
       const blogData = req.body;
       const result = await blogsCollection.insertOne(blogData);
-      
+
       res.send(result);
     });
 

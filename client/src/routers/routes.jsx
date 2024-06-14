@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
         path: "/single-blog/:id",
         element: <SingleBlog />,
         loader: ({ params }) =>
-          fetch(`https://update-blog-api.vercel.app/all-blogs/${params.id}`),
+          fetch(`http://localhost:5000/all-blogs/${params.id}`),
       },
       {
         path: "/about",
@@ -70,12 +70,12 @@ export const router = createBrowserRouter([
         path: "edit-blog/:id",
         element: <EditBlog />,
         loader: ({ params }) =>
-          fetch(`https://update-blog-api.vercel.app/all-blogs${params.id}`),
+          fetch(`http://localhost:5000/all-blogs${params.id}`),
       },
       {
         path: "manage-blogs",
         element: <ManageBlogs />,
-        loader: () => fetch("https://update-blog-api.vercel.app/all-blogs"),
+        loader: () => fetch("http://localhost:5000/all-blogs"),
       },
       {
         path: "all-blogs",

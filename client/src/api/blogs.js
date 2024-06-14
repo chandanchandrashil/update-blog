@@ -3,7 +3,7 @@ export const addNewBlog = (formData) => {
   console.log(" from blogs.js", formData);
 
   try {
-    fetch("https://update-blog-api.vercel.app/all-blogs", {
+    fetch("http://localhost:5000/all-blogs", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -22,7 +22,7 @@ export const editBlogPost = (formData) => {
   console.log(" from blogs.js", formData);
 
   try {
-    fetch("https://update-blog-api.vercel.app/all-blogs", {
+    fetch("http://localhost:5000/all-blogs", {
       method: "POST",
       headers: {
         "content-type": "application/json",

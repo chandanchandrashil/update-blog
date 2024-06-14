@@ -1,12 +1,12 @@
-import {useContext} from "react"
+import { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoutButton from "./LogoutButton";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 function Header() {
-  const { user } = useContext(AuthContext)
- 
+  const { user } = useContext(AuthContext);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
