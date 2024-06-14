@@ -24,13 +24,13 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    await client.connect();
+     client.connect();
 
     const updateBlogsDB = client.db("updateBlogsDB");
     const blogsCollection = updateBlogsDB.collection("blogsCollection");
     const usersCollection = updateBlogsDB.collection("usersCollection");
 
-    app.get("/all-blogs", async (req, res) => {
+    app.get("/all-blogs", async (req , res) => {
       const blogsData = await blogsCollection.find();
      
       const result = await blogsData.toArray();
