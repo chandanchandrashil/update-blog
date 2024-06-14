@@ -11,6 +11,8 @@ const corsOptions = {
   credentials: true,
   optionSuccessStatus: 200,
 }
+app.use(cors(corsOptions));
+app.use(express.json());
 
 const uri = `mongodb+srv://${process.env.BD_NAME}:${process.env.BD_PASSWORD}@cluster0.bwgvxez.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 

@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchBlogData = async () => {
-      await fetch("http://localhost:5000/all-blogs")
+      await fetch("https://update-blog-api.vercel.app/all-blogs")
         .then((res) => res.json())
         .then((data) => setBlogs(data));
     };

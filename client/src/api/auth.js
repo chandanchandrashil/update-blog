@@ -7,7 +7,7 @@ export const saveUserInfo = (user) => {
   };
 
   try {
-    fetch(`http://localhost:5000/users/${user?.email}`, {
+    fetch(`https://update-blog-api.vercel.app/users/${user?.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
