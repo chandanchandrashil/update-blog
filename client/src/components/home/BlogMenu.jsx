@@ -21,18 +21,9 @@ const BlogMenu = ({blogs}) => {
           <h1 className="  text-4xl sm:font-bold font-bold">Category Links</h1>
         </div>
         <div className="grid gap-4 lg:grid-cols-4 md:grid-cols-6 grid-cols-5 ">
-          <CategoryListLinks />
-          <CategoryListLinks />
-          <CategoryListLinks />
-          <CategoryListLinks />
-          <CategoryListLinks />
-          <CategoryListLinks />
-          <CategoryListLinks />
-          <CategoryListLinks />
-          <CategoryListLinks />
-          <CategoryListLinks />
-          <CategoryListLinks />
-          <CategoryListLinks />
+          {blogs?.map((blog) => (
+            <CategoryListLinks key={blog._id} blog={blog} />
+          ))}
         </div>
 
         <div className="my-12  ">

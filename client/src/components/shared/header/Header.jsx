@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoutButton from "./LogoutButton";
 import { AuthContext } from "../../../providers/AuthProvider";
+import updateBlog from "/public/updateBlog.png"
 
 function Header() {
   const { user } = useContext(AuthContext);
@@ -15,11 +16,15 @@ function Header() {
         {/* Logo */}
         <div className="text-xl font-bold">
           <Link to="/" className="hover:text-gray-300">
-            Update Blog
+            <img
+              className="w-36 relative flex-1 object-contain"
+              src={updateBlog}
+              alt="update blog"
+            />
           </Link>
         </div>
         {/* Navigation Links */}
-        <nav className="hidden md:flex space-x-4">
+        <nav className="hidden text-md font-semibold md:flex space-x-4">
           <Link to="/" className="hover:text-gray-300">
             Home
           </Link>
