@@ -3,9 +3,11 @@ import {Link} from "react-router-dom"
 const PopularCategoryCard = ({ name, backgroundColor }) => {
   return (
     <div
-      className={`rounded-lg p-4 mb-4 text-center text-white font-medium shadow-md ${backgroundColor}`}
+      className={` xl:h-52 lg:h-48  md:h-44 sm:h-32 flex justify-center items-center rounded-lg p-4 mb-4 text-center   ${backgroundColor}`}
     >
-      <Link to="/">{name}</Link>
+      <Link className="text-black font-semibold xl:text-2xl lg:text-2xl text-xl" to="/">
+        {name}
+      </Link>
     </div>
   );
 };

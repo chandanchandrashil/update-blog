@@ -5,14 +5,14 @@ const SingleBlogCard = ({blog}) => {
     <div className="lg:flex gap-8 justify-center mb-12  items-center">
       <div>
         <img
-          className="w-96 relative flex-1 object-contain"
+          className="w-96 relative flex-1  object-contain"
           src={blog?.image}
           alt=""
         />
       </div>
       <div className="lg:flex-1 ">
         <div className=" mt-6">
-          <span className="inline-block px-2 py-1 mr-2 rounded-lg text-center bg-blue-600 text-white font-medium">
+          <span className="inline-block px-2 py-1 mr-2 rounded-lg text-center bg-blue-400 text-white font-medium">
             {blog?.category}
           </span>
           <span>Publish Date : {blog?.published_date}</span>
@@ -21,7 +21,7 @@ const SingleBlogCard = ({blog}) => {
         <p className="text-lg font-">{blog?.content}</p>
         <Link
           to={`/single-blog/${blog._id}`}
-          className="  font-bold border-b border-blue-700 "
+          className="  font-bold border-b text-blue-500  border-slate-800 "
         >
           Read More ...
         </Link>

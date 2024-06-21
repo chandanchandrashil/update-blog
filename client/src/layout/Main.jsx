@@ -1,7 +1,6 @@
-import {Outlet} from 'react-router-dom';
-import Header from '../components/shared/header/Header';
-import Footer from '../components/shared/footer/Footer';
-
+import { Outlet } from "react-router-dom";
+import Header from "../components/shared/header/Header";
+import Footer from "../components/shared/footer/Footer";
 
 const Main = () => {
   return (
@@ -9,10 +8,10 @@ const Main = () => {
       <div className="my-container ">
         <div className="my-wrapper ">
           <Header />
-          <Outlet />
+            <Outlet />
           <Footer />
         </div>
-      </div>
+        </div>
     </div>
   );
 };

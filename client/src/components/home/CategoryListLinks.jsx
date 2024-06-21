@@ -5,7 +5,7 @@ const CategoryListLinks = ({blog}) => {
     <div className="mb-2">
       <Link
         to="/"
-        className="text-gray-700  hover:text-gray-900 px-3 py-1 rounded-full bg-blue-200 hover:bg-blue-400 font-medium"
+        className="text-gray-700  hover:text-gray-900 px-3 py-1 rounded-md bg-blue-200 hover:bg-blue-400 font-medium"
       >
       {blog?.category}
       </Link>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const SingleBlogMenu = ({blog}) => {
   return (
-    <div className="flex items-center gap-4 mb-4 ">
+    <div className="flex items-center gap-4 mb-4  ">
       <div className="flex:1   ">
         <img
           className=" border-2   w-24 relative object-cover  "
