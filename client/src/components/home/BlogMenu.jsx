@@ -1,5 +1,3 @@
-import React from 'react';
-
 
 import SingleBlogMenu from './SingleBlogMenu';
 import BlogMenuPost from './BlogMenuPost';

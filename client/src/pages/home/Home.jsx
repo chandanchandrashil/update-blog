@@ -13,14 +13,16 @@ const Home = () => {
     const fetchBlogData = async () => {
       await fetch("https://update-blog-api.vercel.app/all-blogs")
         .then((res) => res.json())
-        .then((data) => setBlogs(data));
+        .then((data) => {
+          setBlogs(data);
+        });
     };
     fetchBlogData();
   }, []);
 
   return (
     <div>
-    {/*   <Hero /> */}
+      <Hero />
       <FeaturedBlog />
       <PopularCategory />
       <div className=" lg:flex md:flex  lg:gap-12 md:gap-4 border-[1px] rounded p-16">

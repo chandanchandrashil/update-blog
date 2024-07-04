@@ -95,12 +95,12 @@ const EditBlog = () => {
             required
           >
             <option value="">Select Category</option>
-            <option value="technology">Technology</option>
-            <option value="coding">Coding</option>
-            <option value="programming">Programming</option>
+            <option value="technology">Gaming </option>
+            <option value="coding">Fashion</option>
+            <option value="programming">Sports</option>
             <option value="lifestyle">Lifestyle</option>
             <option value="travel">Travel</option>
-            <option value="food">Food</option>
+            <option value="food">Education</option>
             {/* Add more category options as needed */}
           </select>
         </div>
