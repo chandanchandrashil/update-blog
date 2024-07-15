@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-const CategoryListLinks = ({blog}) => {
+const CategoryListLinks = ({item}) => {
   return (
     <div className="mb-2">
       <Link
         to="/"
         className="text-gray-700  hover:text-gray-900 px-3 py-1 rounded-md bg-blue-200 hover:bg-blue-400 font-medium"
       >
-      {blog?.category}
+      {item?.title}
       </Link>
     </div>
   );

@@ -11,12 +11,12 @@ const PopularCategory = () => {
     "bg-orange-300",
   ];
   const categories = [
-    "Gaming",
-    "Fashion",
-    "Sports ",
-    "Lifestyle",
-    "Travel",
-    "Education" /* Add more */,
+    { id: 1, title: "Health" },
+    { id: 2, title: "Fashion" },
+    { id: 3, title: "Sport" },
+    { id: 4, title: "Life-style" },
+    { id: 5, title: "Travel" },
+    { id: 6, title: "Education" },
   ];
   return (
     <div className="sm:my-10 md:my-12 lg:my-16">
@@ -27,11 +27,11 @@ const PopularCategory = () => {
       </div>
       <div>
         <div className=" grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 mt-8 sm:gap-4 md:gap-4 lg:gap-6">
-          {categories?.map((name, index) => (
+          {categories?.map((item) => (
             <PopularCategoryCard
-              key={name}
-              name={name}
-              backgroundColor={colors[index % colors.length]}
+              key={item.id}
+              name={item.title}
+              backgroundColor={colors[item.id % colors.length]}
             />
           ))}
         </div>

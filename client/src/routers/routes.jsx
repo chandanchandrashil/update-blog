@@ -16,6 +16,8 @@ import EditBlog from "../pages/dashBoard/EditBlog";
 import ManageBlogs from "../pages/dashBoard/ManageBlogs";
 import UserProfile from "../pages/dashBoard/UserProfile";
 import SingleBlog from "../pages/singleBlogPost/SingleBlog";
+import Categories from "../pages/category/Categories";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +37,10 @@ export const router = createBrowserRouter([
         element: <SingleBlog />,
         loader: ({ params }) =>
           fetch(`https://update-blog-api.vercel.app/all-blogs/${params.id}`),
+      },
+      {
+        path: "/category",
+        element: <Categories />,
       },
       {
         path: "/about",

@@ -6,12 +6,12 @@ const Main = () => {
   return (
     <div className="body-container">
       <div className="my-container ">
+        <Header />
         <div className="my-wrapper ">
-          <Header />
-            <Outlet />
+          <Outlet />
           <Footer />
         </div>
-        </div>
+      </div>
     </div>
   );
 };

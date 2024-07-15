@@ -16,7 +16,7 @@ function Header() {
   };
 
   return (
-    <div className="text-gray-600 border-b-[1px]">
+    <div className="text-gray-900 px-4 bg-blue-200 border-b-[1px]">
       <div className="container mx-auto flex justify-between items-center py-4">
         {/* Logo */}
         <div className="text-xl font-bold">
@@ -29,7 +29,7 @@ function Header() {
           </NavLink>
         </div>
         {/* Navigation Links */}
-        <nav className="hidden text-md font-semibold md:flex space-x-4">
+        <nav className="hidden text-xl font-semibold md:flex space-x-4">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -37,6 +37,15 @@ function Header() {
             }
           >
             Home
+          </NavLink>
+          
+          <NavLink
+            to="/category"
+            className={({ isActive }) =>
+              isActive ? "text-blue-900" : "hover:text-gray-800"
+            }
+          >
+            Category
           </NavLink>
           <NavLink
             to="/about"
@@ -118,6 +127,17 @@ function Header() {
             onClick={handleLinkClick}
           >
             Home
+          </NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "block py-2 px-4 bg-gray-700 text-white"
+                : "block py-2 px-4 hover:bg-gray-700"
+            }
+            onClick={handleLinkClick}
+          >
+            Category
           </NavLink>
           <NavLink
             to="/about"

@@ -23,7 +23,7 @@ const BlogCardList = ({ blogs }) => {
   };
 
   return (
-    <div className="lg:w-2/3 w-full border-r-[1px] rounded px-4">
+    <div className="lg:w-2/3 w-full lg:border-r-[1px] rounded px-4">
       <h1 className="text-4xl sm:font-bold font-bold my-12 mr-auto ml-auto">
         Recent Posts
       </h1>

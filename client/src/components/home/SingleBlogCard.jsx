@@ -2,10 +2,10 @@ import React from 'react';
 import {Link }  from "react-router-dom"
 const SingleBlogCard = ({blog}) => {
   return (
-    <div className="lg:flex gap-8 justify-center mb-12  items-center">
-      <div>
+    <div className="md:flex  gap-8 justify-center mb-12  items-center">
+      <div className=" ">
         <img
-          className="w-96 relative flex-1  object-contain"
+          className="lg:w-96 md:w-64  relative flex-1  object-contain"
           src={blog?.image}
           alt=""
         />
